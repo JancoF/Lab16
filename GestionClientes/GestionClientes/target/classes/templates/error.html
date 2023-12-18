@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Error de Autorización</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin-top: 10%;
+            border-radius: 15px;
+        }
+        .card-header {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container card-body">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center text-white bg-danger">
+                       ¡Ups! Ha ocurrido un error de autorización
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">No está autorizado para realizar esta operación</h5>
+                        <p class="card-text text-center">Por favor, inicie sesión con una cuenta de administrador.</p>
+                        <form action="login" method="post">
+                            <div class="form-group">
+                                <input type="submit" value="Iniciar Sesión" class="btn btn-info btn-block">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

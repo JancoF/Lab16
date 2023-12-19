@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+<head th:replace="fragmento/header :: head"></head>
+
+<body>
+	<div th:insert="/fragmento/header :: menu"> </div>
+	<br>
+	<div class="container mt-4">
+		<div class="container mt-4">
+		<a href="/agregarCliente" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Agregar</a>
+		<div style="margin-top: 20px;"></div>
+		<div style="margin-top: 20px;"></div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">NOMBRES</th>
+					<th scope="col">APELLIDO</th>
+					<th scope="col">EMAIL</th>
+					<th scope="col">ACCIONES</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cliente : ${clientes}">
+					<th th:text="${cliente.id}" scope="row"></th>
+					<td th:text="${cliente.nombre}"></td>
+					<td th:text="${cliente.apellido}"></td>
+					<td th:text="${cliente.email}"></td>
+					<td>
+						<a th:href="@{/editarCliente/}+${cliente.id}" class="btn btn-success">Editar</a>
+						<a th:href="@{/eliminarCliente/}+${cliente.id}" class="btn btn-danger">Eliminar</a>
+						<!--<a th:onclick="'eliminar(' + ${empleado.id} + ')'" class="btn btn-danger">Eliminar</a> -->
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="funciones.js"></script>
+</body>
+
+</html>
